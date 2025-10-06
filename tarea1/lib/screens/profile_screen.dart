@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
               backgroundImage: AssetImage("assets/images/yo.jpg"), // tu foto
             ),
             const SizedBox(height: 15),
-            const Text("Tu Nombre Completo",
+            const Text("Daniel Ramirez Cabello",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           ],
         ),
