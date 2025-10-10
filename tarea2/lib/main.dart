@@ -6,7 +6,6 @@ import 'screens/gallery_screen.dart';
 import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
 import 'screens/fonts_screen.dart';
-import 'screens/repeated_images_screen.dart';
 
 
 void main() {
@@ -30,7 +29,6 @@ class MyApp extends StatelessWidget {
         '/icons': (context) => const IconsScreen(),
         '/images': (context) => const ImagesScreen(),
         '/fonts': (context) => const FontsScreen(),
-        '/repeated': (context) => const RepeatedImagesScreen(),
 
       },
     );
