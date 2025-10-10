@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.2.1
+  auto_size_text: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -17,7 +20,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/images/yo.jpg
     - assets/images/img1.jpg
@@ -25,3 +27,4 @@ flutter:
     - assets/images/img3.jpg
     - assets/images/img4.jpg
     - assets/images/img5.jpg
+

@@ -5,6 +5,11 @@ import 'screens/profile_screen.dart';
 import 'screens/gallery_screen.dart';
 import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
+import 'screens/fonts_screen.dart';
+import 'screens/challenge_screen.dart';
+import 'screens/counter_screen.dart';
+import 'screens/repeated_images_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +31,11 @@ class MyApp extends StatelessWidget {
         '/gallery': (context) => const GalleryScreen(),
         '/icons': (context) => const IconsScreen(),
         '/images': (context) => const ImagesScreen(),
+        '/fonts': (context) => const FontsScreen(),
+        '/challenge': (context) => const ChallengeScreen(),
+        '/counter': (context) => const CounterScreen(),
+        '/repeated': (context) => const RepeatedImagesScreen(),
+
       },
     );
   }
@@ -43,4 +53,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-

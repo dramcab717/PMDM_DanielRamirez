@@ -43,6 +43,26 @@ class CustomDrawer extends StatelessWidget {
             title: const Text("Imágenes"),
             onTap: () => Navigator.pushNamed(context, '/images'),
           ),
+          ListTile(
+            leading: const Icon(Icons.text_fields),
+            title: const Text("Fuentes y Texto"),
+            onTap: () => Navigator.pushNamed(context, '/fonts'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.extension),
+            title: const Text("Reto Flutter Container"),
+            onTap: () => Navigator.pushNamed(context, '/challenge'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.countertops),
+            title: const Text("Contador Avanzado"),
+            onTap: () => Navigator.pushNamed(context, '/counter'),
+          ),
+          ListTile(
+          leading: const Icon(Icons.repeat),
+          title: const Text("Imágenes Repetidas"),
+          onTap: () => Navigator.pushNamed(context, '/repeated'),
+          ),
         ],
       ),
     );
