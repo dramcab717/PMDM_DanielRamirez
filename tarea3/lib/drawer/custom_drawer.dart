@@ -49,10 +49,25 @@ class CustomDrawer extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, '/fonts'),
           ),
           ListTile(
-          leading: const Icon(Icons.repeat),
-          title: const Text("Disposición de Imágenes"),
-          onTap: () => Navigator.pushNamed(context, '/repeated_images'),
+            leading: const Icon(Icons.repeat),
+            title: const Text("Disposición de Imágenes"),
+            onTap: () => Navigator.pushNamed(context, '/repeated_images'),
           ),
+          ListTile(
+            leading: const Icon(Icons.phone),
+            title: const Text('Ejercicio 8 - Filas y columnas anidadas'),
+            onTap: () {
+              Navigator.pushNamed(context, '/exercise8');
+            },
+          ),
+          ListTile(
+          leading: const Icon(Icons.circle),
+          title: const Text('Ejercicio 9 - Helipuerto'),
+          onTap: () {
+            Navigator.pushNamed(context, '/exercise9');
+            },
+          ),
+
         ],
       ),
     );

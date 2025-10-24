@@ -7,6 +7,8 @@ import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
 import 'screens/fonts_screen.dart';
 import 'screens/repeated_images_screen.dart';
+import 'screens/exercise8_screen.dart';
+import 'screens/exercise9_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +32,9 @@ class MyApp extends StatelessWidget {
         '/images': (context) => const ImagesScreen(),
         '/fonts': (context) => const FontsScreen(),
         '/repeated_images': (context) => const RepeatedImagesScreen(),
+        '/exercise8': (context) => const Exercise8Screen(),
+        '/exercise9': (context) => const Exercise9Screen(),
+
       },
     );
   }

@@ -16,7 +16,7 @@ class RepeatedImagesScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔹 Fila 1: Una imagen desde Internet
+            // Fila 1: Una imagen desde Internet
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
@@ -30,7 +30,7 @@ class RepeatedImagesScreen extends StatelessWidget {
             ),
             const SizedBox(height: 70),
 
-            // 🔹 Fila 2: Dos imágenes iguales desde assets
+            // Fila 2: Dos imágenes iguales desde assets
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -41,7 +41,7 @@ class RepeatedImagesScreen extends StatelessWidget {
             ),
             const SizedBox(height: 70),
 
-            // 🔹 Fila 3: Tres imágenes iguales desde assets
+            // Fila 3: Tres imágenes iguales desde assets
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -58,7 +58,7 @@ class RepeatedImagesScreen extends StatelessWidget {
     );
   }
 
-  // 🔧 Widget auxiliar para las imágenes locales
+  // Widget auxiliar para las imágenes locales
   Widget buildLocalImage(String path) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
