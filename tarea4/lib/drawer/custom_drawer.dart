@@ -67,7 +67,19 @@ class CustomDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/exercise9');
             },
           ),
-
+          ListTile(
+          leading: const Icon(Icons.calculate),
+          title: const Text("Contador"),
+          onTap: () {
+            Navigator.pop(context); 
+            Navigator.pushNamed(context, '/counter');
+          },
+        ),
+        ListTile(
+        leading: const Icon(Icons.camera_alt_outlined),
+        title: const Text('Interfaz Instagram'),
+        onTap: () => Navigator.pushNamed(context, '/instagram'),
+        ),
         ],
       ),
     );

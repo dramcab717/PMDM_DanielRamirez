@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Exercise8Screen extends StatelessWidget {
-  const Exercise8Screen({Key? key}) : super(key: key);
+  const Exercise8Screen({super.key});
 
   Widget _imagenConTexto(String ruta, String texto, {double width = 100}) {
     return Column(
