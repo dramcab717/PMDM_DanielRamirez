@@ -11,3 +11,5 @@ export 'counter_screen.dart';
 export 'instagram_clone_screen.dart';
 export 'random_colors_screen.dart';
 export 'tap_game_screen.dart';
+export 'guess_number_screen.dart';
+export 'dynamic_form_screen.dart';

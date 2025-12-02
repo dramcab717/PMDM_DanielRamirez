@@ -2,8 +2,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "tarea6",
-      "cwd": "tarea6",
+      "name": "tarea8",
+      "cwd": "tarea8",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart"
