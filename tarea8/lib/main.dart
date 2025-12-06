@@ -3,8 +3,10 @@ import 'drawer/custom_drawer.dart';
 import 'screens/screens.dart';
 import 'screens/splash_screen.dart';  
 import 'theme/app_theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();   // 👈 IMPORTANTE
   runApp(const MyApp());
 }
 

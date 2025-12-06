@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RandomColors extends StatefulWidget {
   const RandomColors({super.key});
@@ -11,13 +12,8 @@ class RandomColors extends StatefulWidget {
 
 class _RandomColorsState extends State<RandomColors> {
   int points = 0;
-
-  late int randomIndexColor;
-  late int randomIndexName;
-
-  late Color randomColor;
   late String randomName;
-
+  late Color randomColor;
   late Timer _timer;
 
   final colorNames = ['azul', 'verde', 'naranja'];
@@ -30,14 +26,35 @@ class _RandomColorsState extends State<RandomColors> {
   @override
   void initState() {
     super.initState();
-    getRandomIndexes();
+    loadPoints();     // ⬅ cargar puntos guardados
+    getRandomColor();
+    getRandomName();
     startTimer();
+  }
+
+  // -------------------------
+  // Cargar puntos guardados
+  // -------------------------
+  Future<void> loadPoints() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      points = prefs.getInt('color_game_points') ?? 0;
+    });
+  }
+
+  // -------------------------
+  // Guardar puntos
+  // -------------------------
+  Future<void> savePoints() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('color_game_points', points);
   }
 
   void startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
-        getRandomIndexes();
+        getRandomColor();
+        getRandomName();
       });
     });
   }
@@ -48,22 +65,10 @@ class _RandomColorsState extends State<RandomColors> {
     super.dispose();
   }
 
-  void getRandomIndexes() {
-    Random random = Random();
-    randomIndexColor = random.nextInt(3);
-    randomIndexName = random.nextInt(3);
-
-    randomColor = colorHex[randomIndexColor];
-    randomName = colorNames[randomIndexName];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Colores Aleatorios"),
-      ),
+      appBar: AppBar(title: const Text("Juego Colores Aleatorios")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -73,7 +78,9 @@ class _RandomColorsState extends State<RandomColors> {
           ),
           Center(
             child: GestureDetector(
-              onTap: onGiftTap,
+              onTap: () {
+                onGiftTap(randomName, randomColor);
+              },
               child: Column(
                 children: [
                   Container(
@@ -98,13 +105,33 @@ class _RandomColorsState extends State<RandomColors> {
     );
   }
 
-  void onGiftTap() {
+  void getRandomColor() {
+    Random random = Random();
+    randomColor = colorHex[random.nextInt(3)];
+  }
+
+  void getRandomName() {
+    Random random = Random();
+    randomName = colorNames[random.nextInt(3)];
+  }
+
+  String hexToStringConverter(Color hexColor) {
+    if (hexColor == const Color(0xFF0000FF)) return 'azul';
+    if (hexColor == const Color(0xFF00FF00)) return 'verde';
+    return 'naranja';
+  }
+
+  void onGiftTap(String name, Color color) {
+    var colorToString = hexToStringConverter(color);
+
     setState(() {
-      if (randomIndexColor == randomIndexName) {
+      if (name == colorToString) {
         points++;
       } else {
         points--;
       }
     });
+
+    savePoints();   // ⬅ guardar cambios
   }
 }

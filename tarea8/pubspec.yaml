@@ -12,6 +12,7 @@ dependencies:
   google_fonts: ^6.2.1
   auto_size_text: ^3.0.0
   flutter_launcher_icons: ^0.14.4
+  shared_preferences: ^2.3.2
 
 
 dev_dependencies:
@@ -40,4 +41,7 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/icon.png"
+
+
+
 
